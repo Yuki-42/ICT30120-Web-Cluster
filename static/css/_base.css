@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=JetBrains Mono");
+
+:root {
+    font-family: "Open Sans", sans-serif;
+    background-color: var(--primary-background);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+    overflow-x: clip;
+}
+
+/* Background Colour Classes */
+.bg-primary {
+    background-color: var(--primary-background);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-background);
+}
+
+.bg-yellow-1 {
+    background-color: var(--yellow-1);
+}
+
+.bg-yellow-2 {
+    background-color: var(--yellow-2);
+}
+
+.bg-green-1 {
+    background-color: var(--green-1);
+}
+
+.black-text {
+    color: var(--text-black);
+}
+
+body {
+    min-height: 101vh;
+    height: 104%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 10vh !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-section {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header nav {
+    float: left;
+    margin-left: -1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav div a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-size: larger;
+    text-align: center;
+}
+
+.logo {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-left: 4vw;
+}
+
+.logo img {
+    height: 8vh;
+}
+
+footer {
+    justify-content: center;
+    gap: 4em;
+    text-align: center;
+    padding: 1em 0; /* top right bottom left */
+    max-height: min-content;
+    min-height: 4vh;
+}
+
+footer #site-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+footer img {
+    width: 15vw;
+    height: min-content;
+    padding: 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+main {
+    flex: 1;
+}
+
+code, pre {
+    background-color: var(--code-normal);
+    border-radius: 5px;
+    padding: 0.2em;
+    font-family: "JetBrains Mono", monospace;
+    font-size: small;
+}
+
+.gallery {
+    display: grid;
+    margin: 2em 0 2em 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+}
+
+.gallery-item {
+    background-color: var(--yellow-1);
+    /* Add a transition for the colour on hover */
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    padding: 1em;
+    text-align: center;
+    width: auto;
+}
+
+.gallery-item:hover {
+    background-color: var(--yellow-2);
+}
+
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.grid-margins {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr; /* 3 columns, left and right are for shoulder space, middle is main */
+}
+
+.centre {
+    text-align: center;
+}
+
+@-webkit-keyframes red-pulse {
+    0% {
+        color: red;
+    }
+    50% {
+        color: inherit;
+    }
+    100% {
+        color: red;
+    }
+}
+
+@keyframes red-pulse {
+    0% {
+        color: red;
+    }
+    50% {
+        color: var(--text-black);
+    }
+    100% {
+        color: red;
+    }
+}
+
+.error {
+    animation: red-pulse 0.7s 3;
+    background-color: inherit;
+}
+
+.back-button {
+    height: 100%;
+    background-color: var(--yellow-1);
+    border-color: var(--yellow-1);
+    border-radius: 5px;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: var(--yellow-2);
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+
+#age-submit {
+    border-radius: 5px;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.centre-flex {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+}

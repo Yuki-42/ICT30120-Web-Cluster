@@ -1,0 +1,50 @@
+:root {
+    --primary-background: #ffffff;
+    --secondary-background: #f1f1f1;
+    --code-normal: #cccccc;
+    --code-yellow: #f5d342;
+    --yellow-1: #dbb700;
+    --yellow-2: #ccaa00;
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --green-1: #034320;
+    --text-primary: #000000;
+    --text-secondary: #ffffff;
+}
+
+header {
+    background: var(--green-1);
+}
+
+footer {
+    color: var(--text-primary);
+    background: var(--yellow-1);
+}
+
+a {
+    color: var(--text-primary);
+}
+
+nav a {
+    color: var(--text-white);
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--code-yellow);
+}
+
+.gallery-item {
+    background-color: var(--yellow-1);
+}
+
+.gallery-item-details {
+    color: var(--text-primary);
+    background-color: var(--yellow-1);
+}
+
+#age-submit {
+    background-color: var(--yellow-1);
+    border-color: var(--yellow-1);
+    color: var(--text-primary);
+}

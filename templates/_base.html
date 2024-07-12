@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for("static", filename="css/_base.css") }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for("static", filename="cssl/_colours.css") }}">
+    <script type="application/javascript" src="{{ url_for("static", filename="js/_base.js") }}"></script>
+    <script type="application/javascript" src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div id="header-left" class="header-section">
+            <div id="logo" class="logo">
+
+            </div>
+        </div>
+        <div id="header-centre" class="header-section">
+
+            <nav><!--
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>-->
+                <!--
+            <div>  Tests is commented out as it is not needed in production
+
+            </div>
+            -->
+            </nav>
+        </div>
+        <div id="header-right" class="header-section"></div>
+    </header>
+    <main>
+        <section id="main">
+            {% block content %}{% endblock %}
+        </section>
+    </main>
+    <footer><!--
+        <div id="site-info">
+            <p><a href="https://github.com/Yuki-42/IA3/blob/master/LICENSE">Licensed</a> Kyle Pannan {{ year }}</p>
+        </div>
+        <img id="footer-logo" src="" alt="QLD Government Logo"> -->
+    </footer>
+</body>
+</html>
