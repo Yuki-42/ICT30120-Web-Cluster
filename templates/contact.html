@@ -7,7 +7,28 @@
         <div id="left"></div>
         <div id="centre">
             <h3>Contact</h3>
-            <p>Welcome to the contact page!</p>
+            <form id="contact">
+                <div class="form-section">
+                    <label for="name">Name</label><br>
+                    <input type="text" id="name" name="name" placeholder="Name..." required>
+                </div>
+                <div class="form-section">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="Email..." required>
+                </div>
+                <div class="form-section">
+                    <label for="phone">Phone Number (Optional)</label><br>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number...">
+                </div>
+                <div class="form-section">
+                    <label for="subject">Subject</label><br>
+                    <input type="text" id="subject" name="subject" placeholder="Subject..." required>
+                </div>
+                <div class="form-section">
+                    <label for="message">Message</label><br>
+                    <textarea id="message" name="message" placeholder="Message..." required></textarea>
+                </div>
+            </form>
         </div>
         <div id="right"></div>
     </section>
