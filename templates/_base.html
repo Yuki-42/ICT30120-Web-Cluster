@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
     <link type="text/css" rel="stylesheet" href="{{ url_for("static", filename="css/_base.css") }}">
-    <link type="text/css" rel="stylesheet" href="{{ url_for("static", filename="cssl/_colours.css") }}">
-    <script type="application/javascript" src="{{ url_for("static", filename="js/_base.js") }}"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for("static", filename="css/_colours.css") }}">
     <script type="application/javascript" src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
     <script type="application/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     {% block styles %}{% endblock %}
@@ -15,42 +14,33 @@
 </head>
 <body>
     <header>
-        <div id="header-left" class="header-section">
-            <div id="logo" class="logo">
-
+        <div id="header-top">
+            <div id="header-left" class="header-section">
+                <h1 id="logo-text">Echo</h1>
+            </div>
+            <div id="header-centre" class="header-section">
+                <nav id="header-bottom">
+                    <ul id="navbar">
+                        <li><a href="{{ url_for("index") }}">Home</a></li>
+                        <li><a href="{{ url_for("gallery") }}">Gallery</a></li>
+                        <li><a href="{{ url_for("contact") }}">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <div id="header-centre" class="header-section">
-
-            <nav><!--
-                <div>
-
-                </div>
-                <div>
-
-                </div>
-                <div>
-
-                </div>-->
-                <!--
-            <div>  Tests is commented out as it is not needed in production
-
-            </div>
-            -->
-            </nav>
-        </div>
-        <div id="header-right" class="header-section"></div>
     </header>
     <main>
         <section id="main">
             {% block content %}{% endblock %}
         </section>
     </main>
-    <footer><!--
-        <div id="site-info">
-            <p><a href="https://github.com/Yuki-42/IA3/blob/master/LICENSE">Licensed</a> Kyle Pannan {{ year }}</p>
+    <footer>
+        <div id="icons">
+            <a href="https://x.com"><img class="footer-img" src="{{ url_for("static", filename="img/modified/x.jpg") }}" alt="Twitter logo."></a>
         </div>
-        <img id="footer-logo" src="" alt="QLD Government Logo"> -->
+        <div id="copyright-text">
+            Copyright Kyle Pannan <a href="https://github.com/Yuki-42/ICT30120-Web-Cluster/blob/main/LICENSE">Licensed</a>
+        </div>
     </footer>
 </body>
 </html>

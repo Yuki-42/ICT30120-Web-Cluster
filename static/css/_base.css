@@ -2,85 +2,72 @@
 @import url("https://fonts.googleapis.com/css?family=JetBrains Mono");
 
 :root {
+    --transition-time: 0.3s;
     font-family: "Open Sans", sans-serif;
-    background-color: var(--primary-background);
-    color: var(--text-primary);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color var(--transition-time), color var(--transition-time);
     overflow-x: clip;
 }
 
-/* Background Colour Classes */
-.bg-primary {
-    background-color: var(--primary-background);
-}
-
-.bg-secondary {
-    background-color: var(--secondary-background);
-}
-
-.bg-yellow-1 {
-    background-color: var(--yellow-1);
-}
-
-.bg-yellow-2 {
-    background-color: var(--yellow-2);
-}
-
-.bg-green-1 {
-    background-color: var(--green-1);
-}
-
-.black-text {
-    color: var(--text-black);
-}
-
 body {
-    min-height: 101vh;
-    height: 104%;
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
 header {
-    height: 10vh !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0 8vw 0 8vw;
+    overflow-y: clip;
 }
 
-.header-section {
-    height: 100%;
+#header-top {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
     align-items: center;
 }
 
-header nav {
-    float: left;
-    margin-left: -1vw;
+#logo-text {
+    background-image: var(--linearPrimaryAccent);
+    color: transparent;
+    background-clip: text;
+}
+
+#header-bottom {
+    align-content: center;
+    align-items: center;
+}
+
+#navbar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    list-style: none;
+    align-content: center;
+    justify-content: space-between;
+    gap: 20em;
 }
 
-header nav div a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    padding: 0.5em 1em;
-    font-size: larger;
+#navbar li {
+    display: inline;
+    transition: background-color var(--transition-time), color var(--transition-time);
+    width: 100%;
     text-align: center;
 }
 
-.logo {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    margin-left: 4vw;
+/* Hover effect for navbar LI */
+#navbar li:hover {
+    background-color: var(--background-200);
+    border-radius: 5px;
 }
 
-.logo img {
-    height: 8vh;
+#navbar a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 footer {
@@ -100,12 +87,11 @@ footer #site-info {
     font-weight: bold;
 }
 
-footer img {
-    width: 15vw;
-    height: min-content;
-    padding: 0 0;
-    margin: 0 0 0 0;
+.footer-img {
+    width: 4vw;
+    height: 4vw;
     border: none;
+    border-radius: 50%;
 }
 
 main {
@@ -113,7 +99,7 @@ main {
 }
 
 code, pre {
-    background-color: var(--code-normal);
+    background-color: var(--background-200);
     border-radius: 5px;
     padding: 0.2em;
     font-family: "JetBrains Mono", monospace;
@@ -128,7 +114,7 @@ code, pre {
 }
 
 .gallery-item {
-    background-color: var(--yellow-1);
+    background-color: var(--secondary);
     /* Add a transition for the colour on hover */
     transition: background-color 0.3s;
     border-radius: 5px;
@@ -138,7 +124,7 @@ code, pre {
 }
 
 .gallery-item:hover {
-    background-color: var(--yellow-2);
+    background-color: var(--primary);
 }
 
 
@@ -156,84 +142,9 @@ code, pre {
     text-align: center;
 }
 
-@-webkit-keyframes red-pulse {
-    0% {
-        color: red;
-    }
-    50% {
-        color: inherit;
-    }
-    100% {
-        color: red;
-    }
-}
-
-@keyframes red-pulse {
-    0% {
-        color: red;
-    }
-    50% {
-        color: var(--text-black);
-    }
-    100% {
-        color: red;
-    }
-}
-
 .error {
     animation: red-pulse 0.7s 3;
     background-color: inherit;
-}
-
-.back-button {
-    height: 100%;
-    background-color: var(--yellow-1);
-    border-color: var(--yellow-1);
-    border-radius: 5px;
-    padding: 0.5em;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: background-color 0.3s;
-}
-
-.back-button:hover {
-    background-color: var(--yellow-2);
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    text-align: center;
-}
-
-#age-submit {
-    border-radius: 5px;
-    padding: 0.5em;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s;
 }
 
 .centre-flex {

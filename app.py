@@ -25,5 +25,27 @@ def index() -> str:
     return render_template("index.html")
 
 
+@app.get("/gallery")
+def gallery() -> str:
+    """
+    Displays the gallery page.
+
+    Returns:
+        str: Rendered gallery page
+    """
+    return render_template("gallery.html")
+
+
+@app.get("/contact")
+def contact() -> str:
+    """
+    Displays the contact page.
+
+    Returns:
+        str: Rendered contact page
+    """
+    return render_template("contact.html")
+
+
 if __name__ == "__main__":
     app.run("0.0.0.0", 8080, debug=True)
