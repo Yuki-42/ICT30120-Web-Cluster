@@ -7,7 +7,7 @@
         <div id="left"></div>
         <div id="centre">
             <h3>Contact</h3>
-            <form id="contact">
+            <form id="contact" method="POST">
                 <div class="form-section">
                     <label for="name">Name</label><br>
                     <input type="text" id="name" name="name" placeholder="Name..." required>
@@ -28,6 +28,14 @@
                     <label for="message">Message</label><br>
                     <textarea id="message" name="message" placeholder="Message..." required></textarea>
                 </div>
+                <div class="form-section">
+                    <button type="submit">Submit</button>
+                </div>
+                {% if message %}
+                    <div class="form-section">
+                        <p>{{ message }}</p>
+                    </div>
+                {% endif %}
             </form>
         </div>
         <div id="right"></div>
