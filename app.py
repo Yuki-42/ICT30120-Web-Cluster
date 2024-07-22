@@ -8,7 +8,7 @@ Main program entry point.
 from flask import Flask, Response, redirect, render_template, request, url_for
 
 # Local Imports
-from database import Database, ContactHandler, ContactSubmission
+from database import Database
 
 # Create flask app
 app: Flask = Flask(__name__, static_folder="static", template_folder="templates")

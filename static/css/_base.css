@@ -153,3 +153,44 @@ code, pre {
     flex-direction: column;
     justify-content: center;
 }
+
+form {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    background-color: var(--background-100);
+    border-radius: 15px;
+    width: 75%;
+    padding-bottom: 2vh;
+}
+
+form div {
+    text-align: center;
+
+}
+
+form div input, form div textarea {
+    background-color: var(--background-200);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    width: 30vw;
+}
+
+form button {
+    background-color: var(--accent);
+    border: none;
+    border-radius: 5px;
+    color: #01050e;
+    font-weight: bold;
+    padding: 0.5em;
+    transition: background-color 0.3s;
+    width: 30vw;
+    margin: 0 0 0 0;
+}
+
+form button:hover {
+    background-color: var(--primary);
+}

@@ -5,34 +5,34 @@
 {% block content %}
     <section class="grid-margins">
         <div id="left"></div>
-        <div id="centre">
-            <h3>Contact</h3>
+        <div id="centre" class="centre-flex">
             <form id="contact" method="POST">
-                <div class="form-section">
+                <h3>Contact</h3>
+                <div>
                     <label for="name">Name</label><br>
                     <input type="text" id="name" name="name" placeholder="Name..." required>
                 </div>
-                <div class="form-section">
+                <div>
                     <label for="email">Email</label><br>
                     <input type="email" id="email" name="email" placeholder="Email..." required>
                 </div>
-                <div class="form-section">
+                <div>
                     <label for="phone">Phone Number (Optional)</label><br>
                     <input type="tel" id="phone" name="phone" placeholder="Phone Number...">
                 </div>
-                <div class="form-section">
+                <div>
                     <label for="subject">Subject</label><br>
                     <input type="text" id="subject" name="subject" placeholder="Subject..." required>
                 </div>
-                <div class="form-section">
+                <div>
                     <label for="message">Message</label><br>
                     <textarea id="message" name="message" placeholder="Message..." required></textarea>
                 </div>
-                <div class="form-section">
+                <div>
                     <button type="submit">Submit</button>
                 </div>
                 {% if message %}
-                    <div class="form-section">
+                    <div>
                         <p>{{ message }}</p>
                     </div>
                 {% endif %}
