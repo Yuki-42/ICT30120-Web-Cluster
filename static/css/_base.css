@@ -31,10 +31,25 @@ header {
     align-items: center;
 }
 
+#header-left {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#header-img {
+    height: 4vw;
+    border: none;
+}
+
 #logo-text {
     background-image: var(--linearPrimaryAccent);
     color: transparent;
     background-clip: text;
+    font-size-adjust: 0.58;
+    font-weight: 450;
 }
 
 #header-bottom {
