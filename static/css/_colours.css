@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Konkhmer%20Sleokchher:700|Inter:400');
 
+/* Current WIP Colour Scheme:
+https://coolors.co/44a5da-c548d5-474954-f6f2f7-e71d36
+ */
+
+:root {
+    /* CSS HEX */
+    --picton-blue: #44a5daff;
+    --steel-pink: #c548d5ff;
+    --charcoal: #474954ff;
+    --magnolia: #f5f0f6ff;
+    --ghost-white: #F6F2F7;
+    --red-pantone: #e71d36ff;
+}
+
 :root {
     --linearPrimarySecondary: linear-gradient(#00ffd5, #00273d);
     --linearPrimaryAccent: linear-gradient(#00ffd5, #a62ab7);
