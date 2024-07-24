@@ -21,6 +21,8 @@ body {
 header {
     padding: 0 8vw 0 8vw;
     overflow-y: clip;
+    border-radius: 8px;
+    border-bottom: var(--background-100) 1px solid;
 }
 
 #header-top {
