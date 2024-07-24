@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: var(--background);
+    background-color: var(--background-primary);
     color: var(--text);
     min-height: 100vh;
     height: 100%;
@@ -21,8 +21,7 @@ body {
 header {
     padding: 0 8vw 0 8vw;
     overflow-y: clip;
-    border-radius: 8px;
-    border-bottom: var(--background-100) 1px solid;
+    background-color: var(--background-secondary);
 }
 
 #header-top {
@@ -76,7 +75,7 @@ header {
 
 /* Hover effect for navbar LI */
 #navbar li:hover {
-    background-color: var(--background-200);
+    background-color: var(--background-secondary);
     border-radius: 5px;
 }
 
@@ -90,6 +89,7 @@ header {
 footer {
     justify-content: center;
     gap: 4em;
+    background-color: var(--background-secondary);
     text-align: center;
     padding: 1em 0; /* top right bottom left */
     max-height: min-content;
@@ -116,7 +116,7 @@ main {
 }
 
 code, pre {
-    background-color: var(--background-200);
+    background-color: var(--background-secondary);
     border-radius: 5px;
     padding: 0.2em;
     font-family: "JetBrains Mono", monospace;
@@ -172,12 +172,13 @@ code, pre {
 }
 
 form {
+    margin-top: 2vh;
     align-self: center;
     display: flex;
     flex-direction: column;
     gap: 1em;
     align-items: center;
-    background-color: var(--background-100);
+    background-color: var(--background-secondary);
     border-radius: 15px;
     width: 75%;
     padding-bottom: 2vh;
@@ -185,11 +186,10 @@ form {
 
 form div {
     text-align: center;
-
 }
 
 form div input, form div textarea {
-    background-color: var(--background-200);
+    background-color: var(--charcoal);
     border: none;
     border-radius: 5px;
     padding: 0.5em;
@@ -197,7 +197,7 @@ form div input, form div textarea {
 }
 
 form button {
-    background-color: var(--accent);
+    background-color: var(--primary);
     border: none;
     border-radius: 5px;
     color: #01050e;
@@ -209,5 +209,5 @@ form button {
 }
 
 form button:hover {
-    background-color: var(--primary);
+    background-color: var(--accent);
 }
