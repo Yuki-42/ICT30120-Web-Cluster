@@ -173,6 +173,7 @@ code, pre {
 
 form {
     margin-top: 2vh;
+    margin-bottom: 2vh;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -188,13 +189,22 @@ form div {
     text-align: center;
 }
 
-form div input, form div textarea {
+form div input, form div textarea, form div select {
     background-color: var(--charcoal);
     border: none;
     border-radius: 5px;
     padding: 0.5em;
     width: 30vw;
 }
+
+form div input:focus, form div textarea:focus, form div select:focus {
+    background-color: var(--secondary);
+}
+
+form div input::placeholder, form div textarea::placeholder, form div select option {
+    color: var(--french);
+}
+
 
 form button {
     background-color: var(--primary);
@@ -210,4 +220,9 @@ form button {
 
 form button:hover {
     background-color: var(--accent);
+}
+
+.radio-container div {
+    display: flex;
+    flex-direction: column;
 }

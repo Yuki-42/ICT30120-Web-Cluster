@@ -21,12 +21,41 @@
                     <input type="tel" id="phone" name="phone" placeholder="Phone Number...">
                 </div>
                 <div>
+                    <label for="state">State</label><br>
+                    <select id="state" name="state" required>
+                        <option value="" disabled selected>Select your state...</option>
+                        <option value="ACT">ACT</option>
+                        <option value="NSW">NSW</option>
+                        <option value="NT">NT</option>
+                        <option value="QLD">QLD</option>
+                        <option value="SA">SA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="VIC">VIC</option>
+                        <option value="WA">WA</option>
+                    </select>
+                </div>
+                <div>
                     <label for="subject">Subject</label><br>
                     <input type="text" id="subject" name="subject" placeholder="Subject..." required>
                 </div>
                 <div>
                     <label for="message">Message</label><br>
                     <textarea id="message" name="message" placeholder="Message..." required></textarea>
+                </div>
+                <div>
+                    <label for="terms">I agree to the terms and conditions</label><br>
+                    <input type="checkbox" id="terms" name="terms" required>
+                </div>
+                <div class="radio-container">
+                    <label for="contact-method">Preferred Contact Method</label><br>
+                    <div>
+                        <input type="radio" id="contact-method-email" name="contact-method" value="email" required>
+                        <label for="contact-method-email">Email</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="contact-method-phone" name="contact-method" value="phone" required>
+                        <label for="contact-method-phone">Phone</label>
+                    </div>
                 </div>
                 <div>
                     <button type="submit">Submit</button>
