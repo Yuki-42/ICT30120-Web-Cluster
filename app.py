@@ -3,6 +3,9 @@ Main program entry point.
 """
 
 # Standard Library Imports
+from os import listdir
+from os.path import isfile, join
+from pathlib import Path
 
 # Third Party Imports
 from flask import Flask, Response, redirect, render_template, request, url_for
@@ -38,6 +41,30 @@ def gallery() -> str:
         str: Rendered gallery page
     """
     return render_template("gallery.html")
+
+
+@app.get("/api/gallery")
+def api_gallery() -> dict:
+    """
+    Gets all images in the gallery.
+
+    Works by scanning the /static/modified/gallery directory for images and returning all of them in a list.
+
+    Returns:
+        dict: JSON response containing all images in the gallery
+    """
+    # Get all images in gallery directory
+    images: list[str] = [
+        f"/static/img/modified/gallery/{f}"
+        for f in listdir("static/img/modified/gallery")
+        if isfile(join("static/img/modified/gallery", f))
+    ]
+
+    # Return images
+    return {
+        "images": images,
+        "images_count": len(images)
+    }
 
 
 @app.get("/contact")
