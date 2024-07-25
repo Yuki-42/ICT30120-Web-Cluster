@@ -42,6 +42,8 @@ class ContactHandler(BaseHandler):
             email: str,
             subject: str,
             message: str,
+            state: str,
+            contact_method: str,
             phone: str = None
     ) -> None:
         """
@@ -52,12 +54,14 @@ class ContactHandler(BaseHandler):
             email (str): Email
             subject (str): Subject
             message (str): Message
+            state (str): State
+            contact_method (str): Preferred contact method
             phone (str): Phone number
         """
         cursor: Cursor = self._connection.cursor()
         cursor.execute(
-            "INSERT INTO contact_requests (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)",
-            (name, email, phone, subject, message)
+            "INSERT INTO contact_requests (name, email, phone, subject, message, state, contact_method) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            (name, email, phone, subject, message, state, contact_method)
         )
 
         self._connection.commit()

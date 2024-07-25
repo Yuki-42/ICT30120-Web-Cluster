@@ -6,7 +6,9 @@ CREATE TABLE contact_requests
     email      TEXT NOT NULL,
     phone      TEXT,
     subject    TEXT NOT NULL,
-    message    TEXT NOT NULL
+    message    TEXT NOT NULL,
+    state      TEXT NOT NULL,
+    contact_method TEXT NOT NULL
 );
 
 CREATE TABLE images

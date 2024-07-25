@@ -89,12 +89,14 @@ def contact_post() -> Response:
     # Get form data
     name: str = request.form.get("name")
     email: str = request.form.get("email")
-    phone: str = request.form.get("phone", None)
     subject: str = request.form.get("subject")
     message: str = request.form.get("message")
+    state: str = request.form.get("state")
+    contact_method: str = request.form.get("contact-method")
+    phone: str = request.form.get("phone", None)
 
     # Create new contact request
-    db.contact_requests.new(name, email, subject, message, phone)
+    db.contact_requests.new(name, email, subject, message, state, contact_method, phone)
 
     # Redirect to contact page
     return redirect(
