@@ -5,7 +5,7 @@ Simple database handler for email contact form submissions.
 # Standard Library Imports
 
 # Third Party Imports
-from sqlite3 import connect, Connection, Cursor
+from sqlite3 import Connection, connect
 
 # Local Imports
 from .handlers import BaseHandler, ContactHandler
@@ -41,4 +41,13 @@ class Database:
         Returns:
             ContactHandler: Contact requests handler
         """
+        # Inspection is disabled because the type hint is correct
+        # noinspection PyTypeChecker
         return self._handlers[0]
+
+    def close(self) -> None:
+        """
+        Closes the database connection.
+        """
+        self._connection.close()
+        
