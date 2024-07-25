@@ -195,6 +195,7 @@ form div input, form div textarea, form div select {
     border-radius: 5px;
     padding: 0.5em;
     width: 30vw;
+    color: var(--text);
 }
 
 form div input:focus, form div textarea:focus, form div select:focus {
