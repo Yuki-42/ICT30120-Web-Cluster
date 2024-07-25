@@ -144,10 +144,7 @@ Example:
 
 ```python
 """
-File: echo.py
-Author: John Doe
-Date: 01/01/2020
-Description: This file contains the implementation of the Echo API.
+This file contains the implementation of the Echo API.
 """
 
 # Standard Library Imports
