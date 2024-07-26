@@ -2,14 +2,13 @@
 Contains the ContactHandler class.
 """
 # Standard Library Imports
-from datetime import datetime
-
-# Third Party Imports
-from sqlite3 import Connection, Cursor, Row
+from sqlite3 import Cursor, Row
 
 # Local Imports
 from .base_handler import BaseHandler
 from ..types.contact_submission import ContactSubmission
+
+# Third Party Imports
 
 # Constants
 __all__ = [

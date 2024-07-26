@@ -8,6 +8,7 @@ from datetime import datetime
 from sqlite3 import Connection, Cursor, Row
 
 # Local Imports
+from .base_type import BaseType
 
 # Constants
 __all__ = [
@@ -15,51 +16,10 @@ __all__ = [
 ]
 
 
-class Image:
+class Image(BaseType):
     """
     Represents an image.
     """
-
-    _connection: Connection
-    _id: int
-    _created_at: datetime
-
-    def __init__(
-            self,
-            connection: Connection,
-            row: Row
-    ) -> None:
-        """
-        Initializes the imagen.
-
-        Args:
-            connection (Connection): Connection
-            row (Row): Database row
-        """
-        self._connection = connection
-
-        self._id = row["id"]
-        self._created_at = datetime.fromisoformat(row["created_at"])
-
-    @property
-    def id(self) -> int:
-        """
-        Gets the id.
-
-        Returns:
-            int: Id
-        """
-        return self._id
-
-    @property
-    def created_at(self) -> datetime:
-        """
-        Gets the created at.
-
-        Returns:
-            datetime: Created at
-        """
-        return self._created_at
 
     @property
     def name(self) -> str:
@@ -125,3 +85,18 @@ class Image:
         cursor.close()
         return data[0]
 
+    @property
+    def dict(self) -> dict:
+        """
+        Gets the dictionary representation.
+
+        Returns:
+            dict: Dictionary representation
+        """
+        return {
+            "id": self._id,
+            "created_at": self._created_at.isoformat(),
+            "name": self.name,
+            "path": self.path,
+            "description": self.description
+        }

@@ -3,11 +3,12 @@ Contains the ContactSubmission class.
 """
 # Standard Library Imports
 from datetime import datetime
-
-# Third Party Imports
 from sqlite3 import Connection, Cursor, Row
 
+# Third Party Imports
+
 # Local Imports
+from .base_type import BaseType
 
 # Constants
 __all__ = [
@@ -15,51 +16,10 @@ __all__ = [
 ]
 
 
-class ContactSubmission:
+class ContactSubmission(BaseType):
     """
     Represents a contact form submission.
     """
-
-    _connection: Connection
-    _id: int
-    _created_at: datetime
-
-    def __init__(
-            self,
-            connection: Connection,
-            row: Row
-    ) -> None:
-        """
-        Initializes the contact form submission.
-
-        Args:
-            connection (Connection): Connection
-            row (Row): Database row
-        """
-        self._connection = connection
-
-        self._id = row["id"]
-        self._created_at = datetime.fromisoformat(row["created_at"])
-
-    @property
-    def id(self) -> int:
-        """
-        Gets the id.
-
-        Returns:
-            int: Id
-        """
-        return self._id
-
-    @property
-    def created_at(self) -> datetime:
-        """
-        Gets the created at.
-
-        Returns:
-            datetime: Created at
-        """
-        return self._created_at
 
     @property
     def name(self) -> str:

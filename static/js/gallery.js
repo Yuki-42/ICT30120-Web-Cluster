@@ -14,6 +14,8 @@ function getImages() {
 
 // Display the images
 function displayImages(data) {
+    console.log(data);
+
     // Get the gallery element
     const gallery = document.getElementById('gallery');
 
@@ -25,23 +27,30 @@ function displayImages(data) {
         // Get image data
         let image = data["images"][i];
 
+        console.log(image)
         // Create image container
         const container = document.createElement('div');
         container.className = 'gallery-image';
 
-        // Add title to the image
-        // const title = document.createElement('h3');
-        // title.innerHTML = image.title;
-        // container.appendChild(title);
+        // Create an image title
+        const title = document.createElement('h3');
+        title.textContent = image["name"];
+
+        // Create an image description
+        const description = document.createElement('p');
+        description.textContent = image["description"];
 
         // Create an image element
         const img = document.createElement('img');
 
         // Set the image source
-        img.src = image;
+        img.src = image["path"];
 
         // Add the image to the gallery
+        container.appendChild(title);
         container.appendChild(img);
+        container.appendChild(description);
+
         gallery.appendChild(container);
     }
 }

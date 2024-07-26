@@ -8,7 +8,7 @@ Simple database handler for email contact form submissions.
 from sqlite3 import Connection, connect
 
 # Local Imports
-from .handlers import BaseHandler, ContactHandler
+from .handlers import BaseHandler, ContactHandler, ImageHandler
 
 # Constants
 DB_PATH: str = "db.db"
@@ -30,7 +30,8 @@ class Database:
             check_same_thread=False
         )
         self._handlers = [
-            ContactHandler(self._connection)
+            ContactHandler(self._connection),
+            ImageHandler(self._connection)
         ]
 
     @property
@@ -44,6 +45,18 @@ class Database:
         # Inspection is disabled because the type hint is correct
         # noinspection PyTypeChecker
         return self._handlers[0]
+
+    @property
+    def images(self) -> ImageHandler:
+        """
+        Gets the images handler.
+
+        Returns:
+            ImageHandler: Images handler
+        """
+        # Inspection is disabled because the type hint is correct
+        # noinspection PyTypeChecker
+        return self._handlers[1]
 
     def close(self) -> None:
         """

@@ -12,6 +12,7 @@ from flask import Flask, Response, redirect, render_template, request, url_for
 
 # Local Imports
 from database import Database
+from database.types.image import Image
 
 # Create flask app
 app: Flask = Flask(__name__, static_folder="static", template_folder="templates")
@@ -53,16 +54,12 @@ def api_gallery() -> dict:
     Returns:
         dict: JSON response containing all images in the gallery
     """
-    # Get all images in gallery directory
-    images: list[str] = [
-        f"/static/img/modified/gallery/{f}"
-        for f in listdir("static/img/modified/gallery")
-        if isfile(join("static/img/modified/gallery", f))
-    ]
+    # Get all images in the gallery
+    images: list[Image] = db.images.all
 
     # Return images
     return {
-        "images": images,
+        "images": [image.dict for image in images],
         "images_count": len(images)
     }
 

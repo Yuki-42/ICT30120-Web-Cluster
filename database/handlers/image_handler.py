@@ -2,10 +2,9 @@
 Contains the ImageHandler class.
 """
 # Standard Library Imports
-from datetime import datetime
+from sqlite3 import Cursor, Row
 
 # Third Party Imports
-from sqlite3 import Connection, Cursor, Row
 
 # Local Imports
 from .base_handler import BaseHandler

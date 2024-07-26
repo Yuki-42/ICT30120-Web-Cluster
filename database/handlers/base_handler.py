@@ -2,10 +2,9 @@
 Contains the BaseHandler class.
 """
 # Standard Library Imports
-
-# Third Party Imports
 from sqlite3 import Connection
 
+# Third Party Imports
 
 # Local Imports
 
