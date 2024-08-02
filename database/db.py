@@ -5,7 +5,7 @@ Simple database handler for email contact form submissions.
 # Standard Library Imports
 
 # Third Party Imports
-from sqlite3 import Connection, connect
+from sqlite3 import Connection, Cursor, connect
 
 # Local Imports
 from .handlers import BaseHandler, ContactHandler, ImageHandler
@@ -29,6 +29,42 @@ class Database:
             DB_PATH,
             check_same_thread=False
         )
+
+        # Check if the database is empty
+        cursor: Cursor = self._connection.cursor()
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        tables: list[tuple] = cursor.fetchall()
+        cursor.close()
+
+        if len(tables) != 4:
+            # Create all tables
+            cursor = self._connection.cursor()
+            cursor.execute(
+                """
+                CREATE TABLE contact_requests
+                (
+                    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    name       TEXT NOT NULL,
+                    email      TEXT NOT NULL,
+                    phone      TEXT,
+                    subject    TEXT NOT NULL,
+                    message    TEXT NOT NULL,
+                    state      TEXT NOT NULL,
+                    contact_method TEXT NOT NULL
+                );
+                
+                CREATE TABLE images
+                (
+                    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+                    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    name        TEXT NOT NULL,
+                    path        TEXT NOT NULL,
+                    description TEXT NOT NULL
+                );
+                """
+            )
+
         self._handlers = [
             ContactHandler(self._connection),
             ImageHandler(self._connection)
