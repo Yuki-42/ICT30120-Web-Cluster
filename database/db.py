@@ -36,7 +36,7 @@ class Database:
         tables: list[tuple] = cursor.fetchall()
         cursor.close()
 
-        if len(tables) != 4:
+        if len(tables) != 3:
             # Create all tables
             cursor = self._connection.cursor()
             cursor.execute(
@@ -53,7 +53,10 @@ class Database:
                     state      TEXT NOT NULL,
                     contact_method TEXT NOT NULL
                 );
-                
+                """
+            )
+            cursor.execute(
+                """
                 CREATE TABLE images
                 (
                     id          INTEGER PRIMARY KEY AUTOINCREMENT,
