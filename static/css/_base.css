@@ -169,6 +169,7 @@ code, pre {
     display: -webkit-flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 form {
