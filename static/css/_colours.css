@@ -35,10 +35,10 @@ https://coolors.co/44a5da-c548d5-474954-f6f2f7-e71d36
 @media (prefers-color-scheme: light) {
     :root {
         --text: #01050e;
-        --background-primary: var(--anti-flash);
-        --background-secondary: var(--french);
+        --background-primary: #fafaff;
+        --background-secondary: #f1f0f6;
         --primary: var(--picton-blue);
-        --secondary: var(--secondary-blue);
+        --secondary: #e3e0ef;
         --accent: var(--red-pantone);
     }
 }
