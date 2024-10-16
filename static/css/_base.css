@@ -45,6 +45,12 @@ header {
     border: none;
 }
 
+#banner-img {
+    width: 100%;
+    overflow: clip;
+    height: 10vh;
+}
+
 #logo-text {
     background-image: var(--linearPrimaryAccent);
     color: transparent;
@@ -227,4 +233,20 @@ form button:hover {
 .radio-container div {
     display: flex;
     flex-direction: column;
+}
+
+.contact-table { /* This is a literal table, style it */
+    display: flex;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.contact-table table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.contact-table tr {
+    border-bottom: 1px solid var(--secondary-blue);
+    text-align: center;
 }
